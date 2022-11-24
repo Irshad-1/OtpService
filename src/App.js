@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { OtpValidate } from "./Components/OtpValidate";
+import { OtpGenerate } from "./Components/OtpGenerate";
 
 function App() {
+  const [state, setState] = React.useState("true");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        backgroundImage: `url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg")`,
+      }}
+    >
+      {state ? <OtpGenerate setState={setState} /> : <OtpValidate />}
     </div>
   );
 }
